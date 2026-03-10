@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Joy Collection — CHAJOY Menu</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<a href="order.html" class="fab">
+  <span class="fab-icon">🛍️</span><span>Order Now</span>
+</a>
+
+<nav>
+  <a href="index.html" class="brand">
+    <img src="image_8c6588.jpg" alt="CHAJOY">
+    <span class="brand-name">CHAJOY</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="locations.html">Locations</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">🌙 Dark</button>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="menu-hero">
+  <span class="eyebrow" style="color:rgba(255,255,255,.75);">What we serve</span>
+  <h1>The Joy<br><em>Collection</em></h1>
+  <p>Every item crafted with premium ingredients and a whole lot of love.</p>
+  <div class="size-chips">
+    <div class="size-chip"><span style="font-size:1.4rem;">🥤</span><span class="sz">S · 370ml</span></div>
+    <div class="size-chip"><span style="font-size:1.7rem;">🥤</span><span class="sz">M · 500ml</span></div>
+    <div class="size-chip"><span style="font-size:2rem;">🥤</span><span class="sz">L · 700ml</span></div>
+  </div>
+</div>
+
+<div class="container" style="padding-top:52px;">
+
+  <div class="filter-row reveal">
+    <button class="filter-btn active" data-filter="all">✦ All Items</button>
+    <button class="filter-btn" data-filter="bestseller">🏆 Best Sellers</button>
+    <button class="filter-btn" data-filter="sundae">🍨 Sundaes</button>
+    <button class="filter-btn" data-filter="icecream">🍦 Ice Cream</button>
+    <button class="filter-btn" data-filter="fruittea">🍵 Fruit Teas</button>
+    <button class="filter-btn" data-filter="milkshake">🥤 Milkshakes</button>
+    <button class="filter-btn" data-filter="milktea">🧋 Milk Teas</button>
+  </div>
+
+  <!-- ICE CREAM -->
+  <div class="cat-title reveal">🍦 Ice Cream</div>
+  <div class="menu-grid">
+    <div class="menu-card reveal" data-tags="icecream bestseller">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#f5f0e8,#e8e0d0);display:flex;align-items:center;justify-content:center;font-size:5rem;">🍦</div>
+        <span class="card-badge">Best Seller</span>
+      </div>
+      <div class="card-body">
+        <h3>Ice Cream Soft Serve</h3>
+        <p>Classic creamy soft serve — Original flavour or Matcha. The cornerstone of every CHAJOY visit.</p>
+        <div class="card-footer">
+          <span class="card-price">৳80</span>
+          <div class="card-tags"><span class="card-tag">S size</span><span class="card-tag">Original / Matcha</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUNDAE SERIES -->
+  <div class="cat-title reveal">🍨 Sundae Series</div>
+  <div class="menu-grid">
+    <div class="menu-card reveal" data-tags="sundae bestseller">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#ffe0e6,#ffb3c0);display:flex;align-items:center;justify-content:center;font-size:5rem;">🍓</div>
+        <span class="card-badge">Best Seller</span>
+      </div>
+      <div class="card-body">
+        <h3>Strawberry Sundae</h3>
+        <p>Silky soft serve crowned with vibrant strawberry sauce and real fruit pieces.</p>
+        <div class="card-footer">
+          <span class="card-price">৳200</span>
+          <div class="card-tags"><span class="card-tag">S size</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-tags="sundae">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#ddd0ff,#b899ff);display:flex;align-items:center;justify-content:center;font-size:5rem;">🫐</div>
+      </div>
+      <div class="card-body">
+        <h3>Blueberry Sundae</h3>
+        <p>Creamy soft serve layered with rich blueberry compote and whole blueberry garnish.</p>
+        <div class="card-footer">
+          <span class="card-price">৳200</span>
+          <div class="card-tags"><span class="card-tag">S size</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-tags="sundae">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#ffe8c8,#ffcc88);display:flex;align-items:center;justify-content:center;font-size:5rem;">🍑</div>
+      </div>
+      <div class="card-body">
+        <h3>Peach Sundae</h3>
+        <p>Delicate peach syrup drizzled over velvety soft serve — light, sweet, and summery.</p>
+        <div class="card-footer">
+          <span class="card-price">৳200</span>
+          <div class="card-tags"><span class="card-tag">S size</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-tags="sundae bestseller">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#3d2000,#7a4400);display:flex;align-items:center;justify-content:center;font-size:5rem;">🍮</div>
+        <span class="card-badge">Fan Favourite</span>
+      </div>
+      <div class="card-body">
+        <h3>Brown Sugar Boba Sundae</h3>
+        <p>Warm chewy boba pearls in caramel brown sugar, crowned with cold creamy soft serve.</p>
+        <div class="card-footer">
+          <span class="card-price">৳250</span>
+          <div class="card-tags"><span class="card-tag">S size</span><span class="card-tag">Boba</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-tags="sundae">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#2a2a2a,#555);display:flex;align-items:center;justify-content:center;font-size:5rem;">🍪</div>
+      </div>
+      <div class="card-body">
+        <h3>Chocolate Oreo Crumb Sundae</h3>
+        <p>Soft serve with chocolate fudge and crushed Oreo crumbs — indulgent and satisfyingly crunchy.</p>
+        <div class="card-footer">
+          <span class="card-price">৳250</span>
+          <div class="card-tags"><span class="card-tag">S size</span><span class="card-tag">Oreo</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-tags="sundae">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#ffe0f0,#ff99c8);display:flex;align-items:center;justify-content:center;font-size:5rem;">🍧</div>
+      </div>
+      <div class="card-body">
+        <h3>Guava Crispy Cone Crumb Sundae</h3>
+        <p>Tangy guava sauce over soft serve with crispy waffle cone crumbles for irresistible texture.</p>
+        <div class="card-footer">
+          <span class="card-price">৳250</span>
+          <div class="card-tags"><span class="card-tag">S size</span><span class="card-tag">Guava</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FRUIT TEA -->
+  <div class="cat-title reveal">🍵 Fruit Tea Series</div>
+  <div class="menu-grid">
+    <div class="menu-card reveal" data-tags="fruittea">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#fffde0,#fff099);display:flex;align-items:center;justify-content:center;font-size:5rem;">🍋</div>
+      </div>
+      <div class="card-body">
+        <h3>Fresh Iced Lemon Water</h3>
+        <p>Crisp, zesty fresh-squeezed lemon over ice — pure and naturally refreshing.</p>
+        <div class="card-footer">
+          <span class="card-price">৳80</span>
+          <div class="card-tags"><span class="card-tag">L size</span><span class="card-tag">Light</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-tags="fruittea bestseller">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#e8f5e0,#c5e8a0);display:flex;align-items:center;justify-content:center;font-size:5rem;">🍵</div>
+        <span class="card-badge">Popular</span>
+      </div>
+      <div class="card-body">
+        <h3>Jasmine Green Tea</h3>
+        <p>Delicate jasmine-scented green tea — fragrant, floral, and perfectly clean.</p>
+        <div class="card-footer">
+          <span class="card-price">৳100</span>
+          <div class="card-tags"><span class="card-tag">L size</span><span class="card-tag">Floral</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-tags="fruittea">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#3d2800,#8a5c1a);display:flex;align-items:center;justify-content:center;font-size:5rem;">🍋</div>
+      </div>
+      <div class="card-body">
+        <h3>Lemon Black Tea</h3>
+        <p>Bold black tea brightened with fresh lemon — a classic combination done perfectly.</p>
+        <div class="card-footer">
+          <span class="card-price">৳100</span>
+          <div class="card-tags"><span class="card-tag">L size</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-tags="fruittea">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#e0ffd8,#99e87a);display:flex;align-items:center;justify-content:center;font-size:5rem;">🍈</div>
+      </div>
+      <div class="card-body">
+        <h3>Guava Iced Lemon Green Tea</h3>
+        <p>Tropical guava meets citrus lemon in a refreshing green tea base — uniquely tangy.</p>
+        <div class="card-footer">
+          <span class="card-price">৳210</span>
+          <div class="card-tags"><span class="card-tag">L size</span><span class="card-tag">Tropical</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-tags="fruittea">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#ffe8c8,#d4814a);display:flex;align-items:center;justify-content:center;font-size:5rem;">🍑</div>
+      </div>
+      <div class="card-body">
+        <h3>Shaken Peach Black Tea</h3>
+        <p>Juicy peach shaken vigorously into a chilled black tea base — frothy and fruity.</p>
+        <div class="card-footer">
+          <span class="card-price">৳240</span>
+          <div class="card-tags"><span class="card-tag">L size</span><span class="card-tag">Shaken</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-tags="fruittea bestseller">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#dde8ff,#6688dd);display:flex;align-items:center;justify-content:center;font-size:5rem;">🫐</div>
+        <span class="card-badge">Popular</span>
+      </div>
+      <div class="card-body">
+        <h3>Blueberry Fruit Granule Green Tea</h3>
+        <p>Real blueberry granules in crisp green tea — bursting with colour and natural flavour.</p>
+        <div class="card-footer">
+          <span class="card-price">৳220</span>
+          <div class="card-tags"><span class="card-tag">L size</span><span class="card-tag">Fruity</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-tags="fruittea">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#ffe0ea,#ff6688);display:flex;align-items:center;justify-content:center;font-size:5rem;">🍓</div>
+      </div>
+      <div class="card-body">
+        <h3>Strawberry &amp; Lemon Tea</h3>
+        <p>Sweet strawberry paired with bright lemon in a lightly steeped tea — sweet-sour perfection.</p>
+        <div class="card-footer">
+          <span class="card-price">৳230</span>
+          <div class="card-tags"><span class="card-tag">L size</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-tags="fruittea">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#fff8e0,#ffe0a0);display:flex;align-items:center;justify-content:center;font-size:5rem;">🌸</div>
+      </div>
+      <div class="card-body">
+        <h3>Jasmine Peach Green Tea</h3>
+        <p>Floral jasmine tea softened with the sweetness of ripe peach — elegant and aromatic.</p>
+        <div class="card-footer">
+          <span class="card-price">৳240</span>
+          <div class="card-tags"><span class="card-tag">L size</span><span class="card-tag">Floral</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MILKSHAKE -->
+  <div class="cat-title reveal">🥤 Milkshake Series</div>
+  <div class="menu-grid">
+    <div class="menu-card reveal" data-tags="milkshake">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#2a1800,#6b3d00);display:flex;align-items:center;justify-content:center;font-size:5rem;">🍫</div>
+      </div>
+      <div class="card-body">
+        <h3>Chocolate Oreo Shaking Milkshake</h3>
+        <p>Thick chocolate milkshake shaken with crushed Oreo — rich, creamy, ultra indulgent.</p>
+        <div class="card-footer">
+          <span class="card-price">৳120</span>
+          <div class="card-tags"><span class="card-tag">S size</span><span class="card-tag">Oreo</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-tags="milkshake bestseller">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#ffe4c0,#ffb870);display:flex;align-items:center;justify-content:center;font-size:5rem;">🍑</div>
+        <span class="card-badge">Popular</span>
+      </div>
+      <div class="card-body">
+        <h3>Peach Shake Milkshake</h3>
+        <p>Smooth and velvety peach milkshake — fruity, creamy, and perfectly chilled.</p>
+        <div class="card-footer">
+          <span class="card-price">৳100</span>
+          <div class="card-tags"><span class="card-tag">S size</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-tags="milkshake">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#ece0ff,#9966dd);display:flex;align-items:center;justify-content:center;font-size:5rem;">🫐</div>
+      </div>
+      <div class="card-body">
+        <h3>Blueberry Shake Milkshake</h3>
+        <p>Vibrant blueberry milkshake blended to a gorgeous deep purple — fruity and creamy.</p>
+        <div class="card-footer">
+          <span class="card-price">৳100</span>
+          <div class="card-tags"><span class="card-tag">S size</span><span class="card-tag">Berry</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-tags="milkshake">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#ffe8f5,#ff99cc);display:flex;align-items:center;justify-content:center;font-size:5rem;">🍈</div>
+      </div>
+      <div class="card-body">
+        <h3>Guava Shake Milkshake</h3>
+        <p>Tropical guava blended into a thick, satisfying milkshake with a natural pink blush.</p>
+        <div class="card-footer">
+          <span class="card-price">৳100</span>
+          <div class="card-tags"><span class="card-tag">S size</span><span class="card-tag">Tropical</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-tags="milkshake bestseller">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#ffd0da,#ff4466);display:flex;align-items:center;justify-content:center;font-size:5rem;">🍓</div>
+        <span class="card-badge">Best Seller</span>
+      </div>
+      <div class="card-body">
+        <h3>Strawberry Shake Milkshake</h3>
+        <p>Classic fresh strawberry milkshake — bright, sweet, and creamy with every sip.</p>
+        <div class="card-footer">
+          <span class="card-price">৳100</span>
+          <div class="card-tags"><span class="card-tag">S size</span><span class="card-tag">Classic</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MILK TEA -->
+  <div class="cat-title reveal">🧋 Milk Tea Series</div>
+  <p style="color:var(--ink3);font-size:.88rem;margin-bottom:24px;" class="reveal">🔥 All milk teas available Hot or Iced on request</p>
+  <div class="menu-grid">
+    <div class="menu-card reveal" data-tags="milktea bestseller">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#3d1a00,#8a4400);display:flex;align-items:center;justify-content:center;font-size:5rem;">🧋</div>
+        <span class="card-badge hot">🔥 HOT Item</span>
+      </div>
+      <div class="card-body">
+        <h3>Brown Sugar Boba Milk Tea</h3>
+        <p>Tiger-striped brown sugar boba pearls in velvety milk tea. The CHAJOY signature — iconic and unmissable.</p>
+        <div class="card-footer">
+          <div class="price-stack">
+            <div style="display:flex;align-items:baseline;gap:6px;"><span class="price-main">৳180</span><span class="price-lbl">M</span></div>
+            <div style="display:flex;align-items:baseline;gap:6px;"><span class="price-sm-v">৳120</span><span class="price-lbl">S</span></div>
+          </div>
+          <div class="card-tags"><span class="card-tag">Boba</span><span class="card-tag">HOT</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-tags="milktea">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#e8d8c0,#c4a070);display:flex;align-items:center;justify-content:center;font-size:5rem;">🍵</div>
+      </div>
+      <div class="card-body">
+        <h3>Classic Milk Tea</h3>
+        <p>Smooth, comforting milk tea in the timeless original style — perfect any time of day.</p>
+        <div class="card-footer">
+          <div class="price-stack">
+            <div style="display:flex;align-items:baseline;gap:6px;"><span class="price-main">৳150</span><span class="price-lbl">M</span></div>
+            <div style="display:flex;align-items:baseline;gap:6px;"><span class="price-sm-v">৳110</span><span class="price-lbl">S</span></div>
+          </div>
+          <div class="card-tags"><span class="card-tag">Classic</span><span class="card-tag">HOT</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-tags="milktea">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#e8fff0,#88ddaa);display:flex;align-items:center;justify-content:center;font-size:5rem;">🥥</div>
+      </div>
+      <div class="card-body">
+        <h3>Coconut Jelly Milk Tea</h3>
+        <p>Creamy coconut milk tea loaded with tender, chewy coconut jelly pieces — tropical delight.</p>
+        <div class="card-footer">
+          <div class="price-stack">
+            <div style="display:flex;align-items:baseline;gap:6px;"><span class="price-main">৳160</span><span class="price-lbl">M</span></div>
+            <div style="display:flex;align-items:baseline;gap:6px;"><span class="price-sm-v">৳110</span><span class="price-lbl">S</span></div>
+          </div>
+          <div class="card-tags"><span class="card-tag">Coconut</span><span class="card-tag">Jelly</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-tags="milktea bestseller">
+      <div class="card-img-wrap">
+        <div class="card-img" style="background:linear-gradient(135deg,#ffd0e0,#ff6688);display:flex;align-items:center;justify-content:center;font-size:5rem;">🍓</div>
+        <span class="card-badge hot">🔥 HOT</span>
+      </div>
+      <div class="card-body">
+        <h3>Strawberry Bobo Milk Tea</h3>
+        <p>Fresh strawberry swirled through creamy milk tea with chewy bobo pearls — sweet and satisfying.</p>
+        <div class="card-footer">
+          <div class="price-stack">
+            <div style="display:flex;align-items:baseline;gap:6px;"><span class="price-main">৳180</span><span class="price-lbl">M</span></div>
+            <div style="display:flex;align-items:baseline;gap:6px;"><span class="price-sm-v">৳130</span><span class="price-lbl">S</span></div>
+          </div>
+          <div class="card-tags"><span class="card-tag">Boba</span><span class="card-tag">Strawberry</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADD-ONS -->
+  <div class="cat-title reveal">✦ Add-Ons &amp; Toppings</div>
+  <div class="addon-grid reveal">
+    <div class="addon-item"><div><div style="font-size:1.3rem;margin-bottom:4px;">🟤</div><div class="addon-name">Brown Pearl</div><div class="addon-desc">Tapioca boba</div></div><span class="addon-price">৳30</span></div>
+    <div class="addon-item"><div><div style="font-size:1.3rem;margin-bottom:4px;">🍮</div><div class="addon-name">Pudding</div><div class="addon-desc">Egg pudding</div></div><span class="addon-price">৳30</span></div>
+    <div class="addon-item"><div><div style="font-size:1.3rem;margin-bottom:4px;">🥥</div><div class="addon-name">Coconut Jelly</div><div class="addon-desc">Chewy jelly</div></div><span class="addon-price">৳30</span></div>
+    <div class="addon-item"><div><div style="font-size:1.3rem;margin-bottom:4px;">🔮</div><div class="addon-name">Crystal Ball</div><div class="addon-desc">Clear jelly balls</div></div><span class="addon-price">৳30</span></div>
+  </div>
+
+  <!-- CUSTOMISE -->
+  <div style="background:var(--card);border-radius:var(--r);padding:36px 40px;margin-top:36px;display:flex;gap:40px;align-items:center;flex-wrap:wrap;box-shadow:var(--sh1);" class="reveal">
+    <div style="flex:1;min-width:200px;">
+      <h3 style="font-size:1.35rem;color:var(--ink);margin-bottom:8px;">Make it yours 🎛️</h3>
+      <p style="color:var(--ink3);font-size:.9rem;line-height:1.7;font-weight:300;">Customise sugar level and ice level at the counter. We cater to every preference!</p>
+    </div>
+    <div style="display:flex;gap:32px;flex-wrap:wrap;">
+      <div style="text-align:center;">
+        <div style="font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:8px;">Sugar Level</div>
+        <div style="display:flex;gap:8px;align-items:flex-end;justify-content:center;">
+          <div style="background:var(--cream2);border-radius:6px;padding:6px 10px;font-size:.78rem;font-weight:700;">50%</div>
+          <div style="background:var(--g1);color:white;border-radius:6px;padding:6px 10px;font-size:.78rem;font-weight:700;">75%</div>
+          <div style="background:var(--g3);color:white;border-radius:6px;padding:8px 12px;font-size:.85rem;font-weight:700;">100%</div>
+        </div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:8px;">Ice Level</div>
+        <div style="display:flex;gap:8px;align-items:flex-end;justify-content:center;">
+          <div style="background:rgba(100,160,255,.15);border-radius:6px;padding:6px 10px;font-size:.78rem;font-weight:700;color:#2980b9;">Less</div>
+          <div style="background:rgba(100,160,255,.35);border-radius:6px;padding:8px 12px;font-size:.85rem;font-weight:700;color:#1a6aa8;">Normal</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STUDENT OFFER -->
+  <div style="background:linear-gradient(145deg,var(--ink),#1e2410);border-radius:var(--r);padding:50px;text-align:center;margin-top:48px;color:white;position:relative;overflow:hidden;" class="reveal">
+    <div style="position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(109,181,42,.1);"></div>
+    <span class="eyebrow" style="color:var(--gl);">Limited Time</span>
+    <h2 style="font-size:2.2rem;margin:10px 0 12px;letter-spacing:-0.04em;">Student Special 🎓</h2>
+    <p style="opacity:.78;margin-bottom:28px;font-weight:300;">Show your student ID at any branch and get <strong style="color:var(--y);font-weight:700;">15% off</strong> your entire order. Every day, all day.</p>
+    <a href="locations.html" class="btn btn-primary">Find a Branch →</a>
+  </div>
+  <div style="height:40px;"></div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="image_8c6588.jpg" alt="CHAJOY">
+      <h3>CHAJOY</h3>
+      <p>Scoop Joy, Sip Cha. Dhaka's finest premium ice cream & tea.</p>
+      <div class="footer-socials">
+        <a href="https://facebook.com/chajoybd" target="_blank">Facebook</a>
+        <a href="https://instagram.com/chajoybd" target="_blank">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:01713913227">01713-913227</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#026a676e6e6d42616a63686d7b60662c616d6f"><span class="__cf_email__" data-cfemail="167e737a7a7956757e777c796f74723875797b">[email&#160;protected]</span></a></li>
+        <li><a href="https://wa.me/8801713913227" target="_blank">WhatsApp Order</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 CHAJOY Bangladesh. All ri
+<script src="script.js"></script>
+<script>
+(function() {
+  const MENU_ITEMS = [
+    { id: 'is', name: 'Ice Cream Soft Serve', price: 80 },
+    { id: 'ss', name: 'Strawberry Sundae', price: 200 },
+    { id: 'bs', name: 'Blueberry Sundae', price: 200 },
+    { id: 'ps', name: 'Peach Sundae', price: 200 },
+    { id: 'bbs', name: 'Brown Sugar Boba Sundae', price: 250 },
+    { id: 'cos', name: 'Choco Oreo Sundae', price: 250 },
+    { id: 'ms', name: 'Mango Tango Sundae', price: 220 },
+    { id: 'bft', name: 'Blueberry Fruit Tea', price: 220 },
+    { id: 'lft', name: 'Lychee Fruit Tea', price: 210 },
+    { id: 'mft', name: 'Mango Fruit Tea', price: 210 },
+    { id: 'smk', name: 'Strawberry Milkshake', price: 220 },
+    { id: 'mmk', name: 'Mango Milkshake', price: 220 },
+    { id: 'bmt', name: 'Brown Sugar Boba Milk Tea', price: 180 },
+    { id: 'cmt', name: 'Classic Milk Tea', price: 150 },
+    { id: 'cjmt', name: 'Coconut Jelly Milk Tea', price: 160 },
+    { id: 'sbmt', name: 'Strawberry Bobo Milk Tea', price: 180 },
+    { id: 'bp', name: 'Brown Pearl Add-on', price: 30 },
+    { id: 'pud', name: 'Pudding Add-on', price: 30 },
+  ];
+
+  let cart = {};
+
+  function addItem(id, btn) {
+    cart[id] = (cart[id] || 0) + 1;
+    updateCartBar();
+    btn.textContent = '✓ Added!';
+    btn.style.background = 'var(--g2)';
+    setTimeout(() => { btn.innerHTML = '+ Add'; btn.style.background = 'var(--g1)'; }, 1200);
+    const bar = document.getElementById('cj-cart-bar');
+    if (bar) { bar.style.transform = 'translateX(-50%) scale(1.05)'; setTimeout(() => bar.style.transform = 'translateX(-50%) scale(1)', 200); }
+  }
+
+  function updateCartBar() {
+    const total = Object.keys(cart).reduce((s, id) => { const item = MENU_ITEMS.find(m => m.id === id); return s + (item ? item.price * cart[id] : 0); }, 0);
+    const count = Object.values(cart).reduce((s, v) => s + v, 0);
+    const bar = document.getElementById('cj-cart-bar');
+    if (!bar) return;
+    if (count === 0) { bar.style.display = 'none'; return; }
+    bar.style.display = 'flex';
+    document.getElementById('cj-cart-count').textContent = count + ' item' + (count > 1 ? 's' : '');
+    document.getElementById('cj-cart-total').textContent = '৳' + total;
+  }
+
+  function goToOrder() {
+    localStorage.setItem('cj_cart_preload', JSON.stringify(cart));
+    window.location.href = 'order.html';
+  }
+
+  function injectButtons() {
+    const nameToId = {};
+    MENU_ITEMS.forEach(m => { nameToId[m.id] = m; });
+    const cardMap = {
+      'Ice Cream Soft Serve': 'is', 'Strawberry Sundae': 'ss', 'Blueberry Sundae': 'bs',
+      'Peach Sundae': 'ps', 'Brown Sugar Boba Sundae': 'bbs', 'Chocolate Oreo Crumb Sundae': 'cos',
+      'Mango Tango Sundae': 'ms', 'Blueberry Fruit Tea': 'bft', 'Lychee Fruit Tea': 'lft',
+      'Mango Fruit Tea': 'mft', 'Strawberry Milkshake': 'smk', 'Mango Milkshake': 'mmk',
+      'Brown Sugar Boba Milk Tea': 'bmt', 'Classic Milk Tea': 'cmt', 'Coconut Jelly Milk Tea': 'cjmt',
+      'Strawberry Bobo Milk Tea': 'sbmt', 'Brown Pearl': 'bp', 'Pudding': 'pud',
+    };
+    document.querySelectorAll('.menu-card').forEach(card => {
+      const h3 = card.querySelector('h3');
+      if (!h3) return;
+      const name = h3.textContent.trim();
+      const id = cardMap[name];
+      if (!id || card.querySelector('.cj-add-btn')) return;
+      const footer = card.querySelector('.card-footer');
+      if (!footer) return;
+      const btn = document.createElement('button');
+      btn.className = 'cj-add-btn';
+      btn.innerHTML = '+ Add';
+      btn.style.cssText = "background:var(--g1);color:white;border:none;border-radius:50px;padding:7px 18px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:.78rem;cursor:pointer;transition:all .2s;white-space:nowrap;margin-left:auto;";
+      btn.addEventListener('click', (e) => { e.stopPropagation(); addItem(id, btn); });
+      footer.style.flexWrap = 'wrap';
+      footer.appendChild(btn);
+    });
+    document.querySelectorAll('.addon-item').forEach(item => {
+      const nameEl = item.querySelector('.addon-name');
+      if (!nameEl || item.querySelector('.cj-add-btn')) return;
+      const name = nameEl.textContent.trim();
+      const id = cardMap[name];
+      if (!id) return;
+      const btn = document.createElement('button');
+      btn.className = 'cj-add-btn';
+      btn.innerHTML = '+';
+      btn.style.cssText = "background:var(--g1);color:white;border:none;border-radius:50%;width:28px;height:28px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;transition:all .2s;flex-shrink:0;";
+      btn.addEventListener('click', (e) => { e.stopPropagation(); addItem(id, btn); btn.textContent='✓'; setTimeout(()=>btn.textContent='+',1200); });
+      item.appendChild(btn);
+    });
+  }
+
+  function createCartBar() {
+    const bar = document.createElement('div');
+    bar.id = 'cj-cart-bar';
+    bar.style.cssText = "display:none;position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;border-radius:50px;padding:14px 24px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:.88rem;cursor:pointer;z-index:997;gap:14px;align-items:center;box-shadow:0 10px 40px rgba(0,0,0,.3);transition:transform .2s;";
+    bar.innerHTML = '<span id="cj-cart-count">0 items</span><span style="width:1px;height:14px;background:rgba(255,255,255,.2);display:inline-block;"></span><span id="cj-cart-total">৳0</span><span style="background:var(--g1);border-radius:50px;padding:6px 18px;font-size:.8rem;">View Order →</span>';
+    bar.addEventListener('click', goToOrder);
+    document.body.appendChild(bar);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => { createCartBar(); injectButtons(); });
+})();
+</script>
+</body>
+</html>

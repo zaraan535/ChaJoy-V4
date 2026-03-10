@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visit Us — CHAJOY Locations</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<a href="https://wa.me/8801713913227?text=Hi!%20I%20want%20to%20order%20from%20CHAJOY" target="_blank" class="fab">
+  <span class="fab-icon">🛍️</span><span>Order Now</span>
+</a>
+
+<nav>
+  <a href="index.html" class="brand">
+    <img src="image_8c6588.jpg" alt="CHAJOY">
+    <span class="brand-name">CHAJOY</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="locations.html">Locations</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">🌙 Dark</button>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="page-hero page-hero-green">
+  <div style="position:absolute;top:-80px;right:-60px;width:350px;height:350px;border-radius:50%;background:rgba(255,255,255,.07);"></div>
+  <div style="position:absolute;bottom:-60px;left:-40px;width:250px;height:250px;border-radius:50%;background:rgba(255,255,255,.05);"></div>
+  <span class="eyebrow" style="color:rgba(255,255,255,.72);">Come find us</span>
+  <h1>Our <em>Branches</em></h1>
+  <p>Two locations across Dhaka — both bringing the same premium joy.</p>
+</div>
+
+<div class="container">
+
+  <div class="loc-grid">
+    <!-- BADDA -->
+    <div class="loc-card reveal">
+      <div class="loc-card-head">
+        <h2>Badda Branch 🏙️</h2>
+        <span class="status-pill" id="baddaStatus">Checking...</span>
+      </div>
+      <div class="loc-details">
+        <p>📍 XIC Point, Bir Uttam Rafiqul Islam Ave, Dhaka 1212</p>
+        <div class="loc-meta">
+          <div class="loc-meta-item"><span>🕙</span><span>10:00 AM – 11:00 PM</span></div>
+          <div class="loc-meta-item"><span>📅</span><span>Open Daily</span></div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;">
+          <a href="https://maps.google.com/?q=23.774109679835213,90.42550198835038" target="_blank" class="btn btn-primary" style="font-size:.82rem;padding:10px 20px;">Get Directions →</a>
+          <a href="https://wa.me/8801713913227?text=Hi!%20I%20am%20at%20the%20Badda%20branch" target="_blank" class="btn btn-dark" style="font-size:.82rem;padding:9px 20px;">📞 Call Branch</a>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps?q=23.774109679835213,90.42550198835038&z=17&output=embed" loading="lazy" allowfullscreen title="Badda Branch Map"></iframe>
+      </div>
+    </div>
+
+    <!-- MIRPUR -->
+    <div class="loc-card reveal">
+      <div class="loc-card-head">
+        <h2>Mirpur Branch 🌿</h2>
+        <span class="status-pill" id="mirpurStatus">Checking...</span>
+      </div>
+      <div class="loc-details">
+        <p>📍 Chajoy-Mirpur 1st shop, Kachukhet Rd, Dhaka</p>
+        <div class="loc-meta">
+          <div class="loc-meta-item"><span>🕙</span><span>11:00 AM – 10:00 PM</span></div>
+          <div class="loc-meta-item"><span>📅</span><span>Open Daily</span></div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;">
+          <a href="https://maps.google.com/?q=23.793578440629272,90.38813609341226" target="_blank" class="btn btn-primary" style="font-size:.82rem;padding:10px 20px;">Get Directions →</a>
+          <a href="https://wa.me/8801713913227?text=Hi!%20I%20am%20at%20the%20Mirpur%20branch" target="_blank" class="btn btn-dark" style="font-size:.82rem;padding:9px 20px;">📞 Call Branch</a>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3650.7024840629272!2d90.38813609341226!3d23.793578440629272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjPCsDQ3JzM2LjkiTiA5MMKwMjMnMTcuMyJF!5e0!3m2!1sen!2sbd!4v1715600000000!5m2!1sen!2sbd" loading="lazy" allowfullscreen title="Mirpur Branch Map"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- DELIVERY CALLOUT -->
+  <div style="margin-top:60px;background:var(--g1);border-radius:var(--r);padding:44px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;color:white;" class="reveal">
+    <div>
+      <h3 style="font-size:1.8rem;margin-bottom:8px;letter-spacing:-0.03em;">Can't make it in person? 🛵</h3>
+      <p style="opacity:.88;font-weight:300;">Order via WhatsApp for home delivery or pick-up scheduling — we'll bring the joy to you!</p>
+    </div>
+    <a href="https://wa.me/8801713913227?text=Hi!%20I%20want%20to%20order%20for%20delivery" target="_blank" style="background:white;color:var(--g2);text-decoration:none;font-weight:800;padding:14px 30px;border-radius:50px;white-space:nowrap;font-size:.9rem;transition:.3s;display:inline-flex;align-items:center;gap:8px;letter-spacing:.3px;">
+      💬 Order on WhatsApp
+    </a>
+  </div>
+
+  <!-- FAQ -->
+  <div style="margin-top:60px;" class="reveal">
+    <span class="eyebrow">Good to know</span>
+    <h2 class="section-title" style="margin-bottom:32px;">Branch <em>FAQ</em></h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+      <div style="background:var(--card);padding:28px;border-radius:var(--r2);box-shadow:var(--sh1);">
+        <div style="font-size:1.5rem;margin-bottom:10px;">🅿️</div>
+        <h4 style="margin-bottom:8px;color:var(--ink);font-size:1rem;">Is there parking?</h4>
+        <p style="color:var(--ink3);font-size:.88rem;line-height:1.65;font-weight:300;">Both branches have convenient street parking nearby. Rickshaws and CNGs are also easily available.</p>
+      </div>
+      <div style="background:var(--card);padding:28px;border-radius:var(--r2);box-shadow:var(--sh1);">
+        <div style="font-size:1.5rem;margin-bottom:10px;">💳</div>
+        <h4 style="margin-bottom:8px;color:var(--ink);font-size:1rem;">Payment Methods</h4>
+        <p style="color:var(--ink3);font-size:.88rem;line-height:1.65;font-weight:300;">We accept cash, bKash, and Nagad. Card payments are coming soon!</p>
+      </div>
+      <div style="background:var(--card);padding:28px;border-radius:var(--r2);box-shadow:var(--sh1);">
+        <div style="font-size:1.5rem;margin-bottom:10px;">🎂</div>
+        <h4 style="margin-bottom:8px;color:var(--ink);font-size:1rem;">Events & Catering</h4>
+        <p style="color:var(--ink3);font-size:.88rem;line-height:1.65;font-weight:300;">We cater for birthdays and corporate events. <a href="index.html#contact" style="color:var(--g1);font-weight:600;">Contact us</a> to arrange.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="image_8c6588.jpg" alt="CHAJOY">
+      <h3>CHAJOY</h3>
+      <p>Scoop Joy, Sip Cha. Dhaka's finest premium ice cream & tea.</p>
+      <div class="footer-socials">
+        <a href="https://facebook.com/chajoybd" target="_blank">Facebook</a>
+        <a href="https://instagram.com/chajoybd" target="_blank">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:01713913227">01713-913227</a></li>
+        <li><a href="mailto:hello@chajoybd.com">hello@chajoybd.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 CHAJOY Bangladesh.</span>
+    <span>Made with 🐧 in Dhaka</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

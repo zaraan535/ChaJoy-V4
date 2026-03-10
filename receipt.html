@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Confirmed — CHAJOY Receipt</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+.receipt-wrap{max-width:640px;margin:60px auto;padding:0 20px 80px;}
+.success-banner{background:linear-gradient(135deg,var(--g2),var(--g1));border-radius:var(--r);padding:44px;text-align:center;color:white;margin-bottom:28px;position:relative;overflow:hidden;}
+.success-banner::before{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.08);}
+.success-banner::after{content:'';position:absolute;bottom:-50px;left:-30px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,.05);}
+.success-icon{font-size:3.5rem;margin-bottom:16px;animation:popIn .6s cubic-bezier(0.22,1,0.36,1) both;}
+@keyframes popIn{from{transform:scale(0) rotate(-15deg);opacity:0;}to{transform:scale(1) rotate(0);opacity:1;}}
+.success-title{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:900;letter-spacing:-0.04em;margin-bottom:8px;}
+.success-title em{font-style:italic;color:var(--y);}
+.success-sub{opacity:.85;font-size:.95rem;font-weight:300;}
+.order-num-badge{display:inline-block;background:rgba(255,255,255,.18);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.3);border-radius:50px;padding:8px 22px;font-weight:800;font-size:.9rem;letter-spacing:1px;margin-top:18px;}
+.receipt-card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh2);overflow:hidden;}
+.receipt-top{padding:32px 36px;border-bottom:2px dashed rgba(109,181,42,.2);}
+.receipt-logo{display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+.receipt-logo-text{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:900;color:var(--g1);letter-spacing:-0.04em;}
+.receipt-meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.receipt-meta-item small{display:block;font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:3px;}
+.receipt-meta-item span{font-weight:600;font-size:.9rem;color:var(--ink);}
+.receipt-items{padding:24px 36px;border-bottom:2px dashed rgba(109,181,42,.2);}
+.receipt-items h4{font-size:.7rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink3);margin-bottom:16px;}
+.receipt-item-row{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;font-size:.9rem;gap:10px;}
+.receipt-item-name{color:var(--ink2);flex:1;}
+.receipt-item-qty{color:var(--ink3);font-size:.8rem;margin-right:8px;}
+.receipt-item-price{font-weight:700;color:var(--ink);white-space:nowrap;}
+.receipt-bottom{padding:24px 36px;}
+.receipt-total-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;}
+.receipt-total-row .label{font-size:.82rem;color:var(--ink3);}
+.receipt-total-row .val{font-weight:700;font-size:.9rem;color:var(--ink);}
+.receipt-grand{display:flex;justify-content:space-between;align-items:baseline;padding-top:12px;border-top:1.5px solid rgba(109,181,42,.2);margin-top:4px;}
+.receipt-grand .label{font-weight:800;font-size:1rem;color:var(--ink);}
+.receipt-grand .val{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:900;color:var(--g1);letter-spacing:-0.03em;}
+.paid-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(109,181,42,.12);border:1px solid rgba(109,181,42,.3);color:var(--g2);border-radius:50px;padding:6px 16px;font-size:.78rem;font-weight:800;letter-spacing:1px;margin-top:8px;}
+.trx-display{background:linear-gradient(135deg,rgba(226,19,110,.06),rgba(226,19,110,.02));border:1.5px solid rgba(226,19,110,.25);border-radius:var(--r2);padding:14px 18px;margin-top:16px;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.trx-display-label{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c01259;margin-bottom:3px;}
+.trx-display-val{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:900;color:#c01259;letter-spacing:.05em;}
+.receipt-actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;}
+.receipt-actions .btn{flex:1;justify-content:center;min-width:120px;}
+.notify-bar{background:rgba(109,181,42,.08);border:1px solid rgba(109,181,42,.2);border-radius:var(--r2);padding:14px 18px;font-size:.84rem;color:var(--g2);line-height:1.6;margin-top:20px;display:flex;gap:12px;align-items:flex-start;}
+.wa-notify-btn{background:var(--g1);color:white;border:none;border-radius:50px;padding:12px 22px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:.85rem;cursor:pointer;transition:all .3s;display:flex;align-items:center;gap:8px;width:100%;margin-top:12px;justify-content:center;}
+.wa-notify-btn:hover{background:var(--g2);transform:translateY(-2px);}
+@media(max-width:500px){.receipt-top,.receipt-items,.receipt-bottom{padding:20px;}.receipt-meta{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand">
+    <img src="image_8c6588.jpg" alt="CHAJOY">
+    <span class="brand-name">CHAJOY</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="locations.html">Locations</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">🌙 Dark</button>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="receipt-wrap">
+
+  <!-- SUCCESS BANNER -->
+  <div class="success-banner reveal">
+    <div class="success-icon">🎉</div>
+    <div class="success-title">Order <em>Confirmed!</em></div>
+    <div class="success-sub">Your payment details have been received. The CHAJOY team will verify and confirm your order shortly.</div>
+    <div class="order-num-badge" id="bannerOrderNum">CJ-XXXXXX</div>
+  </div>
+
+  <!-- RECEIPT CARD -->
+  <div class="receipt-card reveal">
+
+    <!-- HEADER -->
+    <div class="receipt-top">
+      <div class="receipt-logo">
+        <img src="image_8c6588.jpg" alt="CHAJOY" style="width:38px;height:38px;object-fit:contain;">
+        <span class="receipt-logo-text">CHAJOY</span>
+        <span style="font-size:.72rem;color:var(--ink3);margin-left:6px;font-weight:300;">Order Receipt</span>
+      </div>
+      <div class="receipt-meta">
+        <div class="receipt-meta-item">
+          <small>Order Number</small>
+          <span id="rOrderNum">—</span>
+        </div>
+        <div class="receipt-meta-item">
+          <small>Date &amp; Time</small>
+          <span id="rDate">—</span>
+        </div>
+        <div class="receipt-meta-item">
+          <small>Customer</small>
+          <span id="rName">—</span>
+        </div>
+        <div class="receipt-meta-item">
+          <small>Phone</small>
+          <span id="rPhone">—</span>
+        </div>
+        <div class="receipt-meta-item">
+          <small>Pickup Branch</small>
+          <span id="rBranch">—</span>
+        </div>
+        <div class="receipt-meta-item">
+          <small>Payment</small>
+          <span>bKash</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEMS -->
+    <div class="receipt-items">
+      <h4>Items Ordered</h4>
+      <div id="rItems"><!-- filled by JS --></div>
+    </div>
+
+    <!-- TOTALS + TRX -->
+    <div class="receipt-bottom">
+      <div class="receipt-grand">
+        <span class="label">Total Paid</span>
+        <span class="val" id="rTotal">৳0</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:10px;">
+        <div class="paid-pill">✓ PAID</div>
+        <span style="font-size:.78rem;color:var(--ink3);">Payment Status</span>
+      </div>
+      <div class="trx-display">
+        <div>
+          <div class="trx-display-label">bKash Transaction ID</div>
+          <div class="trx-display-val" id="rTrxId">—</div>
+        </div>
+        <span style="font-size:1.5rem;">💳</span>
+      </div>
+      <div id="rNotes" style="display:none;margin-top:14px;padding:12px 16px;background:var(--cream);border-radius:var(--r2);font-size:.84rem;color:var(--ink3);"></div>
+
+      <!-- NOTIFY CHAJOY TEAM -->
+      <div class="notify-bar" id="notifyBar">
+        <span style="font-size:1.2rem;flex-shrink:0;">💬</span>
+        <div>
+          <strong style="color:var(--g2);display:block;margin-bottom:4px;">Send order to CHAJOY team</strong>
+          Tap below to automatically send your order details via WhatsApp for faster confirmation.
+          <button class="wa-notify-btn" id="waBtn" onclick="sendWhatsApp()">
+            💬 Send via WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <div class="receipt-actions">
+        <button class="btn btn-primary" onclick="window.print()">🖨️ Print Receipt</button>
+        <a href="index.html" class="btn btn-dark">← Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="image_8c6588.jpg" alt="CHAJOY">
+      <h3>CHAJOY</h3>
+      <p>Scoop Joy, Sip Cha. Dhaka's finest premium ice cream & tea.</p>
+      <div class="footer-socials">
+        <a href="https://facebook.com/chajoybd" target="_blank">Facebook</a>
+        <a href="https://instagram.com/chajoybd" target="_blank">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:01713913227">01713-913227</a></li>
+        <li><a href="mailto:hello@chajoybd.com">hello@chajoybd.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 CHAJOY Bangladesh.</span>
+    <span>Made with 🐧 in Dhaka</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+function loadReceipt() {
+  const raw = localStorage.getItem('cj_last_order');
+  if (!raw) { window.location.href = 'index.html'; return; }
+  const o = JSON.parse(raw);
+
+  document.getElementById('bannerOrderNum').textContent = o.orderNum;
+  document.getElementById('rOrderNum').textContent = o.orderNum;
+
+  const paidAt = new Date(o.paidAt);
+  const dateStr = paidAt.toLocaleDateString('en-BD', { day:'2-digit', month:'short', year:'numeric' });
+  const timeStr = paidAt.toLocaleTimeString('en-BD', { hour:'2-digit', minute:'2-digit' });
+  document.getElementById('rDate').textContent = dateStr + ' · ' + timeStr;
+
+  document.getElementById('rName').textContent = o.name;
+  document.getElementById('rPhone').textContent = o.phone;
+  document.getElementById('rBranch').textContent = o.branch + ' Branch';
+  document.getElementById('rTotal').textContent = '৳' + o.total;
+  document.getElementById('rTrxId').textContent = o.trxId;
+
+  document.getElementById('rItems').innerHTML = o.items.map(item => `
+    <div class="receipt-item-row">
+      <span class="receipt-item-name">${item.name}</span>
+      <span class="receipt-item-qty">×${item.qty}</span>
+      <span class="receipt-item-price">৳${item.subtotal}</span>
+    </div>`).join('');
+
+  if (o.notes) {
+    const notesEl = document.getElementById('rNotes');
+    notesEl.style.display = 'block';
+    notesEl.innerHTML = '📝 <strong>Special instructions:</strong> ' + o.notes;
+  }
+}
+
+function sendWhatsApp() {
+  const waUrl = localStorage.getItem('cj_wa_notify');
+  if (waUrl) {
+    window.open(waUrl, '_blank');
+    const btn = document.getElementById('waBtn');
+    btn.textContent = '✓ Sent! Check WhatsApp';
+    btn.style.background = 'var(--g2)';
+    localStorage.removeItem('cj_wa_notify');
+  }
+}
+
+loadReceipt();
+
+// Auto-open WhatsApp after a short delay on first load
+window.addEventListener('DOMContentLoaded', () => {
+  const waUrl = localStorage.getItem('cj_wa_notify');
+  if (!waUrl) {
+    document.getElementById('notifyBar').style.display = 'none';
+  }
+});
+</script>
+</body>
+</html>

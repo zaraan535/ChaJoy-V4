@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Place Your Order — CHAJOY</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+.order-layout{display:grid;grid-template-columns:1fr 380px;gap:36px;align-items:start;margin-top:52px;}
+.order-form-wrap{background:var(--card);border-radius:var(--r);box-shadow:var(--sh2);padding:44px;}
+.order-summary-wrap{background:var(--card);border-radius:var(--r);box-shadow:var(--sh2);padding:36px;position:sticky;top:90px;}
+.order-summary-wrap h3{font-family:'Fraunces',serif;font-size:1.3rem;margin-bottom:20px;color:var(--ink);}
+.cart-empty{text-align:center;padding:40px 20px;color:var(--ink3);}
+.cart-empty .empty-icon{font-size:3rem;margin-bottom:12px;}
+.cart-item{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(0,0,0,.06);gap:10px;}
+body.dark .cart-item{border-bottom-color:rgba(255,255,255,.06);}
+.cart-item:last-child{border-bottom:none;}
+.cart-item-name{font-weight:600;font-size:.9rem;color:var(--ink);flex:1;}
+.cart-item-qty{display:flex;align-items:center;gap:8px;}
+.qty-btn{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(109,181,42,.4);background:transparent;color:var(--g1);font-size:1rem;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:700;display:flex;align-items:center;justify-content:center;transition:all .2s;line-height:1;}
+.qty-btn:hover{background:var(--g1);color:white;}
+.qty-num{font-weight:700;font-size:.9rem;min-width:18px;text-align:center;}
+.cart-item-price{font-family:'Fraunces',serif;font-weight:700;color:var(--g1);font-size:1rem;white-space:nowrap;}
+.cart-remove{background:none;border:none;color:var(--ink3);cursor:pointer;font-size:1.1rem;padding:2px;transition:color .2s;}
+.cart-remove:hover{color:#c0392b;}
+.summary-divider{border:none;border-top:1px dashed rgba(109,181,42,.25);margin:16px 0;}
+.summary-row{display:flex;justify-content:space-between;font-size:.88rem;color:var(--ink3);margin-bottom:8px;}
+.summary-total{display:flex;justify-content:space-between;font-weight:800;color:var(--ink);margin-top:4px;}
+.summary-total span:last-child{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--g1);}
+.menu-picker{margin-top:28px;}
+.menu-picker h4{font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:14px;}
+.menu-pick-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-height:280px;overflow-y:auto;padding-right:4px;}
+.menu-pick-grid::-webkit-scrollbar{width:4px;}
+.menu-pick-grid::-webkit-scrollbar-track{background:transparent;}
+.menu-pick-grid::-webkit-scrollbar-thumb{background:var(--g1);border-radius:2px;}
+.pick-btn{background:var(--cream);border:1.5px solid rgba(109,181,42,.2);border-radius:var(--r2);padding:10px 12px;cursor:pointer;text-align:left;transition:all .2s;font-family:'DM Sans',sans-serif;}
+body.dark .pick-btn{background:var(--cream2);}
+.pick-btn:hover{border-color:var(--g1);background:rgba(109,181,42,.06);}
+.pick-btn-name{font-size:.82rem;font-weight:600;color:var(--ink);display:block;margin-bottom:2px;}
+.pick-btn-price{font-size:.78rem;color:var(--g1);font-weight:700;}
+.section-divider{height:1px;background:linear-gradient(to right,transparent,rgba(109,181,42,.2),transparent);margin:32px 0;}
+.form-section-title{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--ink);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.step-badge{width:28px;height:28px;border-radius:50%;background:var(--g1);color:white;font-size:.75rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;}
+.branch-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
+.branch-card{border:2px solid rgba(109,181,42,.2);border-radius:var(--r2);padding:16px;cursor:pointer;transition:all .25s;background:transparent;}
+.branch-card:hover{border-color:var(--g1);background:rgba(109,181,42,.04);}
+.branch-card.selected{border-color:var(--g1);background:rgba(109,181,42,.08);}
+.branch-card input[type="radio"]{display:none;}
+.branch-card-title{font-weight:700;font-size:.9rem;color:var(--ink);margin-bottom:4px;}
+.branch-card-sub{font-size:.78rem;color:var(--ink3);line-height:1.5;}
+.note-box{background:linear-gradient(135deg,rgba(109,181,42,.06),rgba(109,181,42,.02));border:1px solid rgba(109,181,42,.2);border-radius:var(--r2);padding:16px 18px;margin-top:8px;font-size:.84rem;color:var(--ink3);line-height:1.65;}
+.submit-btn{width:100%;background:var(--g1);color:white;border:none;border-radius:50px;padding:17px 30px;font-family:'DM Sans',sans-serif;font-weight:800;font-size:1rem;cursor:pointer;transition:all .35s;display:flex;align-items:center;justify-content:center;gap:10px;letter-spacing:.3px;}
+.submit-btn:hover{background:var(--g2);transform:translateY(-3px);box-shadow:0 14px 32px rgba(78,143,22,.38);}
+.submit-btn:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none;}
+@media(max-width:900px){.order-layout{grid-template-columns:1fr;}.order-summary-wrap{position:static;}}
+@media(max-width:600px){.menu-pick-grid{grid-template-columns:1fr;}.branch-cards{grid-template-columns:1fr;}.order-form-wrap{padding:28px 20px;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand">
+    <img src="image_8c6588.jpg" alt="CHAJOY">
+    <span class="brand-name">CHAJOY</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="locations.html">Locations</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">🌙 Dark</button>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="page-hero page-hero-green" style="padding-bottom:50px;">
+  <div style="position:absolute;top:-80px;right:-60px;width:350px;height:350px;border-radius:50%;background:rgba(255,255,255,.07);"></div>
+  <span class="eyebrow" style="color:rgba(255,255,255,.72);">Almost there</span>
+  <h1>Place Your <em>Order</em></h1>
+  <p>Select your items, tell us where to send them, and we'll take care of the rest.</p>
+</div>
+
+<div class="container" style="padding-top:40px;padding-bottom:80px;">
+  <div class="order-layout">
+
+    <!-- LEFT: FORM -->
+    <div class="order-form-wrap reveal">
+
+      <!-- STEP 1: YOUR DETAILS -->
+      <div class="form-section-title">
+        <span class="step-badge">1</span> Your Details
+      </div>
+      <div class="form-group">
+        <label class="form-label">Full Name *</label>
+        <input type="text" id="custName" placeholder="e.g. Rafi Ahmed" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone Number *</label>
+        <input type="tel" id="custPhone" placeholder="e.g. 01712345678" required>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- STEP 2: PICKUP LOCATION -->
+      <div class="form-section-title">
+        <span class="step-badge">2</span> Pickup Location
+      </div>
+      <div class="branch-cards">
+        <label class="branch-card selected" id="baddaCard">
+          <input type="radio" name="branch" value="Badda" checked onchange="selectBranch(this)">
+          <div class="branch-card-title">🏙️ Badda Branch</div>
+          <div class="branch-card-sub">XIC Point, Bir Uttam Rafiqul Islam Ave<br>Open 10AM–11PM</div>
+        </label>
+        <label class="branch-card" id="mirpurCard">
+          <input type="radio" name="branch" value="Mirpur" onchange="selectBranch(this)">
+          <div class="branch-card-title">🌿 Mirpur Branch</div>
+          <div class="branch-card-sub">Kachukhet Rd, Mirpur<br>Open 11AM–10PM</div>
+        </label>
+      </div>
+      <div class="note-box">
+        💡 Orders are for <strong>in-store pickup</strong>. Pay via bKash after confirming your order, then collect from the branch.
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- STEP 3: YOUR ITEMS -->
+      <div class="form-section-title">
+        <span class="step-badge">3</span> Select Items
+      </div>
+      <div class="menu-picker">
+        <h4>Tap to add items to your order</h4>
+        <div class="menu-pick-grid" id="menuPickGrid">
+          <!-- filled by JS -->
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- STEP 4: SPECIAL INSTRUCTIONS -->
+      <div class="form-section-title">
+        <span class="step-badge">4</span> Special Instructions <span style="font-size:.75rem;color:var(--ink3);font-family:'DM Sans',sans-serif;font-weight:300;">(optional)</span>
+      </div>
+      <div class="form-group">
+        <textarea id="custNotes" rows="3" placeholder="e.g. Less sugar for the milk tea, extra pearls on the sundae..."></textarea>
+      </div>
+
+      <div style="margin-top:8px;" id="errorMsg" style="display:none;"></div>
+
+      <button class="submit-btn" onclick="submitOrder()" id="submitBtn">
+        Proceed to Payment →
+      </button>
+    </div>
+
+    <!-- RIGHT: CART SUMMARY -->
+    <div class="order-summary-wrap reveal">
+      <h3>🧾 Your Order</h3>
+      <div id="cartContent">
+        <div class="cart-empty">
+          <div class="empty-icon">🛒</div>
+          <p style="font-size:.88rem;color:var(--ink3);">Your cart is empty.<br>Add items from the left.</p>
+        </div>
+      </div>
+      <hr class="summary-divider" id="summaryDivider" style="display:none;">
+      <div id="summaryTotals" style="display:none;">
+        <div class="summary-row"><span>Items</span><span id="itemCount">0</span></div>
+        <div class="summary-total"><span>Total</span><span id="cartTotal">৳0</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="image_8c6588.jpg" alt="CHAJOY">
+      <h3>CHAJOY</h3>
+      <p>Scoop Joy, Sip Cha. Dhaka's finest premium ice cream & tea.</p>
+      <div class="footer-socials">
+        <a href="https://facebook.com/chajoybd" target="_blank">Facebook</a>
+        <a href="https://instagram.com/chajoybd" target="_blank">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:01713913227">01713-913227</a></li>
+        <li><a href="mailto:hello@chajoybd.com">hello@chajoybd.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 CHAJOY Bangladesh.</span>
+    <span>Made with 🐧 in Dhaka</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+const MENU_ITEMS = [
+  { id: 'ss', name: 'Strawberry Sundae', price: 200, emoji: '🍓' },
+  { id: 'bs', name: 'Blueberry Sundae', price: 200, emoji: '🫐' },
+  { id: 'ps', name: 'Peach Sundae', price: 200, emoji: '🍑' },
+  { id: 'bbs', name: 'Brown Sugar Boba Sundae', price: 250, emoji: '🍮' },
+  { id: 'cos', name: 'Choco Oreo Sundae', price: 250, emoji: '🍪' },
+  { id: 'ms', name: 'Mango Tango Sundae', price: 220, emoji: '🥭' },
+  { id: 'is', name: 'Ice Cream Soft Serve', price: 80, emoji: '🍦' },
+  { id: 'bft', name: 'Blueberry Fruit Tea', price: 220, emoji: '🫐' },
+  { id: 'lft', name: 'Lychee Fruit Tea', price: 210, emoji: '🍈' },
+  { id: 'mft', name: 'Mango Fruit Tea', price: 210, emoji: '🥭' },
+  { id: 'pft', name: 'Passion Fruit Tea', price: 210, emoji: '🌸' },
+  { id: 'bmt', name: 'Brown Sugar Boba Milk Tea', price: 180, emoji: '🧋' },
+  { id: 'cmt', name: 'Classic Milk Tea', price: 150, emoji: '🍵' },
+  { id: 'cjmt', name: 'Coconut Jelly Milk Tea', price: 160, emoji: '🥥' },
+  { id: 'sbmt', name: 'Strawberry Bobo Milk Tea', price: 180, emoji: '🍓' },
+  { id: 'smk', name: 'Strawberry Milkshake', price: 220, emoji: '🍓' },
+  { id: 'mmk', name: 'Mango Milkshake', price: 220, emoji: '🥭' },
+  { id: 'bp', name: 'Brown Pearl Add-on', price: 30, emoji: '🟤' },
+  { id: 'pud', name: 'Pudding Add-on', price: 30, emoji: '🍮' },
+];
+
+let cart = {};
+
+function renderMenuPicker() {
+  const grid = document.getElementById('menuPickGrid');
+  grid.innerHTML = MENU_ITEMS.map(item => `
+    <button class="pick-btn" onclick="addToCart('${item.id}')">
+      <span class="pick-btn-name">${item.emoji} ${item.name}</span>
+      <span class="pick-btn-price">৳${item.price}</span>
+    </button>
+  `).join('');
+}
+
+function addToCart(id) {
+  cart[id] = (cart[id] || 0) + 1;
+  renderCart();
+}
+
+function changeQty(id, delta) {
+  cart[id] = (cart[id] || 0) + delta;
+  if (cart[id] <= 0) delete cart[id];
+  renderCart();
+}
+
+function removeFromCart(id) {
+  delete cart[id];
+  renderCart();
+}
+
+function renderCart() {
+  const content = document.getElementById('cartContent');
+  const divider = document.getElementById('summaryDivider');
+  const totals = document.getElementById('summaryTotals');
+  const keys = Object.keys(cart);
+
+  if (keys.length === 0) {
+    content.innerHTML = `<div class="cart-empty"><div class="empty-icon">🛒</div><p style="font-size:.88rem;color:var(--ink3);">Your cart is empty.<br>Add items from the left.</p></div>`;
+    divider.style.display = 'none';
+    totals.style.display = 'none';
+    return;
+  }
+
+  let total = 0;
+  let totalItems = 0;
+  content.innerHTML = keys.map(id => {
+    const item = MENU_ITEMS.find(m => m.id === id);
+    const qty = cart[id];
+    const subtotal = item.price * qty;
+    total += subtotal;
+    totalItems += qty;
+    return `
+      <div class="cart-item">
+        <div class="cart-item-name">${item.emoji} ${item.name}</div>
+        <div class="cart-item-qty">
+          <button class="qty-btn" onclick="changeQty('${id}', -1)">−</button>
+          <span class="qty-num">${qty}</span>
+          <button class="qty-btn" onclick="changeQty('${id}', 1)">+</button>
+        </div>
+        <div class="cart-item-price">৳${subtotal}</div>
+        <button class="cart-remove" onclick="removeFromCart('${id}')" title="Remove">✕</button>
+      </div>`;
+  }).join('');
+
+  divider.style.display = 'block';
+  totals.style.display = 'block';
+  document.getElementById('itemCount').textContent = totalItems + (totalItems === 1 ? ' item' : ' items');
+  document.getElementById('cartTotal').textContent = '৳' + total;
+}
+
+function selectBranch(radio) {
+  document.getElementById('baddaCard').classList.remove('selected');
+  document.getElementById('mirpurCard').classList.remove('selected');
+  radio.closest('.branch-card').classList.add('selected');
+}
+
+function submitOrder() {
+  const name = document.getElementById('custName').value.trim();
+  const phone = document.getElementById('custPhone').value.trim();
+  const branch = document.querySelector('input[name="branch"]:checked').value;
+  const notes = document.getElementById('custNotes').value.trim();
+  const cartKeys = Object.keys(cart);
+  const errEl = document.getElementById('errorMsg');
+
+  errEl.style.display = 'none';
+
+  if (!name) { showError('Please enter your name.'); return; }
+  if (!phone || phone.length < 10) { showError('Please enter a valid phone number.'); return; }
+  if (cartKeys.length === 0) { showError('Please add at least one item to your order.'); return; }
+
+  // Build order items array
+  const items = cartKeys.map(id => {
+    const item = MENU_ITEMS.find(m => m.id === id);
+    return { name: item.name, qty: cart[id], unitPrice: item.price, subtotal: item.price * cart[id] };
+  });
+  const total = items.reduce((s, i) => s + i.subtotal, 0);
+  const orderNum = 'CJ-' + Date.now().toString(36).toUpperCase().slice(-6);
+
+  const orderData = { orderNum, name, phone, branch, notes, items, total, createdAt: new Date().toISOString() };
+  localStorage.setItem('cj_pending_order', JSON.stringify(orderData));
+
+  window.location.href = 'payment.html';
+}
+
+function showError(msg) {
+  const el = document.getElementById('errorMsg');
+  el.style.display = 'block';
+  el.innerHTML = `<div style="background:rgba(192,57,43,.1);border:1px solid rgba(192,57,43,.3);color:#c0392b;border-radius:var(--r2);padding:12px 16px;font-size:.88rem;margin-bottom:16px;">⚠️ ${msg}</div>`;
+}
+
+renderMenuPicker();
+
+// Pre-populate cart if coming from menu page
+const preload = localStorage.getItem('cj_cart_preload');
+if (preload) {
+  try {
+    const parsed = JSON.parse(preload);
+    Object.assign(cart, parsed);
+    renderCart();
+    localStorage.removeItem('cj_cart_preload');
+  } catch(e) {}
+}
+</script>
+</body>
+</html>
