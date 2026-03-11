@@ -197,7 +197,7 @@ body.dark .pick-btn{background:var(--cream2);}
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:01713913227">01713-913227</a></li>
-        <li><a href="mailto:hello@chajoybd.com">hello@chajoybd.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#bed6dbd2d2d1feddd6dfd4d1c7dcda90ddd1d3"><span class="__cf_email__" data-cfemail="c1a9a4adadae81a2a9a0abaeb8a3a5efa2aeac">[email&#160;protected]</span></a></li>
       </ul>
     </div>
   </div>
@@ -207,94 +207,191 @@ body.dark .pick-btn{background:var(--cream2);}
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
 <script>
 const MENU_ITEMS = [
-  { id: 'ss', name: 'Strawberry Sundae', price: 200, emoji: '🍓' },
-  { id: 'bs', name: 'Blueberry Sundae', price: 200, emoji: '🫐' },
-  { id: 'ps', name: 'Peach Sundae', price: 200, emoji: '🍑' },
-  { id: 'bbs', name: 'Brown Sugar Boba Sundae', price: 250, emoji: '🍮' },
-  { id: 'cos', name: 'Choco Oreo Sundae', price: 250, emoji: '🍪' },
-  { id: 'ms', name: 'Mango Tango Sundae', price: 220, emoji: '🥭' },
-  { id: 'is', name: 'Ice Cream Soft Serve', price: 80, emoji: '🍦' },
-  { id: 'bft', name: 'Blueberry Fruit Tea', price: 220, emoji: '🫐' },
-  { id: 'lft', name: 'Lychee Fruit Tea', price: 210, emoji: '🍈' },
-  { id: 'mft', name: 'Mango Fruit Tea', price: 210, emoji: '🥭' },
-  { id: 'pft', name: 'Passion Fruit Tea', price: 210, emoji: '🌸' },
-  { id: 'bmt', name: 'Brown Sugar Boba Milk Tea', price: 180, emoji: '🧋' },
-  { id: 'cmt', name: 'Classic Milk Tea', price: 150, emoji: '🍵' },
-  { id: 'cjmt', name: 'Coconut Jelly Milk Tea', price: 160, emoji: '🥥' },
-  { id: 'sbmt', name: 'Strawberry Bobo Milk Tea', price: 180, emoji: '🍓' },
-  { id: 'smk', name: 'Strawberry Milkshake', price: 220, emoji: '🍓' },
-  { id: 'mmk', name: 'Mango Milkshake', price: 220, emoji: '🥭' },
-  { id: 'bp', name: 'Brown Pearl Add-on', price: 30, emoji: '🟤' },
-  { id: 'pud', name: 'Pudding Add-on', price: 30, emoji: '🍮' },
+  { id: 'is',   name: 'Ice Cream Soft Serve',            price: 80,  emoji: '🍦' },
+  { id: 'ss',   name: 'Strawberry Sundae',               price: 200, emoji: '🍓' },
+  { id: 'bs',   name: 'Blueberry Sundae',                price: 200, emoji: '🫐' },
+  { id: 'ps',   name: 'Peach Sundae',                    price: 200, emoji: '🍑' },
+  { id: 'bbs',  name: 'Brown Sugar Boba Sundae',         price: 250, emoji: '🍮' },
+  { id: 'cos',  name: 'Chocolate Oreo Crumb Sundae',     price: 250, emoji: '🍪' },
+  { id: 'gcs',  name: 'Guava Crispy Cone Crumb Sundae',  price: 250, emoji: '🍧' },
+  { id: 'filw', name: 'Fresh Iced Lemon Water',          price: 80,  emoji: '🍋' },
+  { id: 'jgt',  name: 'Jasmine Green Tea',               price: 100, emoji: '🍵' },
+  { id: 'lbt',  name: 'Lemon Black Tea',                 price: 100, emoji: '🍋' },
+  { id: 'gilgt',name: 'Guava Iced Lemon Green Tea',      price: 210, emoji: '🍈' },
+  { id: 'spbt', name: 'Shaken Peach Black Tea',          price: 240, emoji: '🍑' },
+  { id: 'bfggt',name: 'Blueberry Fruit Granule Green Tea',price:220, emoji: '🫐' },
+  { id: 'slt',  name: 'Strawberry & Lemon Tea',          price: 230, emoji: '🍓' },
+  { id: 'jpgt', name: 'Jasmine Peach Green Tea',         price: 240, emoji: '🌸' },
+  { id: 'coms', name: 'Chocolate Oreo Shaking Milkshake',price: 120, emoji: '🍫' },
+  { id: 'psm',  name: 'Peach Shake Milkshake',           price: 100, emoji: '🍑' },
+  { id: 'bsm',  name: 'Blueberry Shake Milkshake',       price: 100, emoji: '🫐' },
+  { id: 'gsm',  name: 'Guava Shake Milkshake',           price: 100, emoji: '🍈' },
+  { id: 'ssm',  name: 'Strawberry Shake Milkshake',      price: 100, emoji: '🍓' },
+  { id: 'bmt',  name: 'Brown Sugar Boba Milk Tea',       price: 180, emoji: '🧋' },
+  { id: 'cmt',  name: 'Classic Milk Tea',                price: 150, emoji: '🍵' },
+  { id: 'cjmt', name: 'Coconut Jelly Milk Tea',          price: 160, emoji: '🥥' },
+  { id: 'sbmt', name: 'Strawberry Bobo Milk Tea',        price: 180, emoji: '🍓' },
+  { id: 'bp',   name: 'Brown Pearl Add-on',              price: 30,  emoji: '🟤' },
+  { id: 'pud',  name: 'Pudding Add-on',                  price: 30,  emoji: '🍮' },
+  { id: 'cj',   name: 'Coconut Jelly Add-on',            price: 30,  emoji: '🥥' },
+  { id: 'cb',   name: 'Crystal Ball Add-on',             price: 30,  emoji: '🔮' },
 ];
 
-let cart = {};
+// cart is an array of { name, emoji, basePrice, finalPrice, size, ice, sugar, qty }
+// We use name+size+ice+sugar as unique key
+let cart = [];
 
+function cartKey(item) {
+  return `${item.name}||${item.size||''}||${item.ice||''}||${item.sugar||''}`;
+}
+
+function findCartEntry(item) {
+  const k = cartKey(item);
+  return cart.find(e => cartKey(e) === k);
+}
+
+// ── RENDER MENU PICKER ──
 function renderMenuPicker() {
   const grid = document.getElementById('menuPickGrid');
   grid.innerHTML = MENU_ITEMS.map(item => `
-    <button class="pick-btn" onclick="addToCart('${item.id}')">
+    <button class="pick-btn" onclick="openPickModal('${item.id}')">
       <span class="pick-btn-name">${item.emoji} ${item.name}</span>
       <span class="pick-btn-price">৳${item.price}</span>
     </button>
   `).join('');
 }
 
-function addToCart(id) {
-  cart[id] = (cart[id] || 0) + 1;
+// ── MINI CUSTOMISE MODAL (inline in order page) ──
+const SOLID_ITEMS = ['sundae','soft serve','ice cream'];
+const SIZE_DELTA = { S: 0, M: 30, L: 60 };
+let pendingItem = null;
+let pickSelections = { size: 'S', ice: 'Normal Ice', sugar: '75%' };
+
+function openPickModal(id) {
+  const item = MENU_ITEMS.find(m => m.id === id);
+  if (!item) return;
+  pendingItem = item;
+  pickSelections = { size: 'S', ice: 'Normal Ice', sugar: '75%' };
+
+  document.getElementById('pickModalTitle').textContent = item.emoji + ' ' + item.name;
+  updatePickPrice();
+
+  const nameLow = item.name.toLowerCase();
+  const isSolid = SOLID_ITEMS.some(k => nameLow.includes(k));
+  const isPureIce = nameLow.includes('soft serve') || nameLow.includes('ice cream');
+
+  document.getElementById('pickSizeGroup').style.display = isSolid ? 'none' : '';
+  document.getElementById('pickIceGroup').style.display  = (isSolid || isPureIce) ? 'none' : '';
+  document.getElementById('pickSugarGroup').style.display = isPureIce ? 'none' : '';
+
+  // Reset chip states
+  document.querySelectorAll('#pickModal .pick-chip').forEach(c => {
+    const g = c.dataset.group, v = c.dataset.val;
+    c.classList.toggle('active',
+      (g==='size' && v==='S') || (g==='ice' && v==='Normal Ice') || (g==='sugar' && v==='75%')
+    );
+  });
+
+  document.getElementById('pickModal').classList.add('open');
+}
+
+window.pickSelect = function(btn, group) {
+  document.querySelectorAll(`#pickModal .pick-chip[data-group="${group}"]`).forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  pickSelections[group] = btn.dataset.val;
+  updatePickPrice();
+};
+
+function updatePickPrice() {
+  if (!pendingItem) return;
+  const delta = SIZE_DELTA[pickSelections.size] || 0;
+  const total = pendingItem.price + delta;
+  document.getElementById('pickConfirmBtn').textContent = `+ Add to Order · ৳${total}`;
+}
+
+window.closePick = function() {
+  document.getElementById('pickModal').classList.remove('open');
+  pendingItem = null;
+};
+
+window.confirmPick = function() {
+  if (!pendingItem) return;
+  const delta = SIZE_DELTA[pickSelections.size] || 0;
+  const finalPrice = pendingItem.price + delta;
+  const entry = {
+    name: pendingItem.name,
+    emoji: pendingItem.emoji,
+    basePrice: pendingItem.price,
+    finalPrice,
+    size: pickSelections.size,
+    ice: pickSelections.ice,
+    sugar: pickSelections.sugar,
+  };
+  const existing = findCartEntry(entry);
+  if (existing) { existing.qty = (existing.qty || 1) + 1; }
+  else { entry.qty = 1; cart.push(entry); }
+  renderCart();
+  closePick();
+};
+
+// ── CART ──
+function changeQty(idx, delta) {
+  cart[idx].qty = (cart[idx].qty || 1) + delta;
+  if (cart[idx].qty <= 0) cart.splice(idx, 1);
   renderCart();
 }
 
-function changeQty(id, delta) {
-  cart[id] = (cart[id] || 0) + delta;
-  if (cart[id] <= 0) delete cart[id];
-  renderCart();
-}
-
-function removeFromCart(id) {
-  delete cart[id];
+function removeFromCart(idx) {
+  cart.splice(idx, 1);
   renderCart();
 }
 
 function renderCart() {
   const content = document.getElementById('cartContent');
   const divider = document.getElementById('summaryDivider');
-  const totals = document.getElementById('summaryTotals');
-  const keys = Object.keys(cart);
+  const totals  = document.getElementById('summaryTotals');
 
-  if (keys.length === 0) {
+  if (cart.length === 0) {
     content.innerHTML = `<div class="cart-empty"><div class="empty-icon">🛒</div><p style="font-size:.88rem;color:var(--ink3);">Your cart is empty.<br>Add items from the left.</p></div>`;
     divider.style.display = 'none';
-    totals.style.display = 'none';
+    totals.style.display  = 'none';
     return;
   }
 
-  let total = 0;
-  let totalItems = 0;
-  content.innerHTML = keys.map(id => {
-    const item = MENU_ITEMS.find(m => m.id === id);
-    const qty = cart[id];
-    const subtotal = item.price * qty;
-    total += subtotal;
-    totalItems += qty;
+  let total = 0, totalItems = 0;
+  content.innerHTML = cart.map((item, idx) => {
+    const subtotal = item.finalPrice * (item.qty || 1);
+    total += subtotal; totalItems += (item.qty || 1);
+    // Build preference tags
+    const prefs = [];
+    if (item.size && item.size !== 'S') prefs.push(item.size + ' size');
+    else if (item.size === 'S') prefs.push('S size');
+    if (item.ice && item.ice !== 'Normal Ice') prefs.push(item.ice);
+    else if (item.ice) prefs.push('Normal Ice');
+    if (item.sugar && item.sugar !== '75%') prefs.push(item.sugar + ' sweet');
+    else if (item.sugar) prefs.push('75% sweet');
+    const prefHTML = prefs.length ? `<div style="margin-top:3px;font-size:.72rem;color:var(--ink3);font-weight:400;">${prefs.join(' · ')}</div>` : '';
     return `
       <div class="cart-item">
-        <div class="cart-item-name">${item.emoji} ${item.name}</div>
+        <div class="cart-item-name">
+          ${item.emoji || ''} ${item.name}
+          ${prefHTML}
+        </div>
         <div class="cart-item-qty">
-          <button class="qty-btn" onclick="changeQty('${id}', -1)">−</button>
-          <span class="qty-num">${qty}</span>
-          <button class="qty-btn" onclick="changeQty('${id}', 1)">+</button>
+          <button class="qty-btn" onclick="changeQty(${idx}, -1)">−</button>
+          <span class="qty-num">${item.qty || 1}</span>
+          <button class="qty-btn" onclick="changeQty(${idx}, 1)">+</button>
         </div>
         <div class="cart-item-price">৳${subtotal}</div>
-        <button class="cart-remove" onclick="removeFromCart('${id}')" title="Remove">✕</button>
+        <button class="cart-remove" onclick="removeFromCart(${idx})" title="Remove">✕</button>
       </div>`;
   }).join('');
 
   divider.style.display = 'block';
-  totals.style.display = 'block';
+  totals.style.display  = 'block';
   document.getElementById('itemCount').textContent = totalItems + (totalItems === 1 ? ' item' : ' items');
   document.getElementById('cartTotal').textContent = '৳' + total;
 }
@@ -306,30 +403,31 @@ function selectBranch(radio) {
 }
 
 function submitOrder() {
-  const name = document.getElementById('custName').value.trim();
-  const phone = document.getElementById('custPhone').value.trim();
+  const name   = document.getElementById('custName').value.trim();
+  const phone  = document.getElementById('custPhone').value.trim();
   const branch = document.querySelector('input[name="branch"]:checked').value;
-  const notes = document.getElementById('custNotes').value.trim();
-  const cartKeys = Object.keys(cart);
-  const errEl = document.getElementById('errorMsg');
-
+  const notes  = document.getElementById('custNotes').value.trim();
+  const errEl  = document.getElementById('errorMsg');
   errEl.style.display = 'none';
 
-  if (!name) { showError('Please enter your name.'); return; }
+  if (!name)                   { showError('Please enter your name.'); return; }
   if (!phone || phone.length < 10) { showError('Please enter a valid phone number.'); return; }
-  if (cartKeys.length === 0) { showError('Please add at least one item to your order.'); return; }
+  if (cart.length === 0)       { showError('Please add at least one item to your order.'); return; }
 
-  // Build order items array
-  const items = cartKeys.map(id => {
-    const item = MENU_ITEMS.find(m => m.id === id);
-    return { name: item.name, qty: cart[id], unitPrice: item.price, subtotal: item.price * cart[id] };
-  });
+  const items = cart.map(e => ({
+    name: e.name,
+    qty: e.qty || 1,
+    unitPrice: e.finalPrice,
+    subtotal: e.finalPrice * (e.qty || 1),
+    size: e.size || '',
+    ice: e.ice || '',
+    sugar: e.sugar || '',
+  }));
   const total = items.reduce((s, i) => s + i.subtotal, 0);
   const orderNum = 'CJ-' + Date.now().toString(36).toUpperCase().slice(-6);
 
   const orderData = { orderNum, name, phone, branch, notes, items, total, createdAt: new Date().toISOString() };
   localStorage.setItem('cj_pending_order', JSON.stringify(orderData));
-
   window.location.href = 'payment.html';
 }
 
@@ -341,16 +439,97 @@ function showError(msg) {
 
 renderMenuPicker();
 
-// Pre-populate cart if coming from menu page
-const preload = localStorage.getItem('cj_cart_preload');
-if (preload) {
-  try {
-    const parsed = JSON.parse(preload);
-    Object.assign(cart, parsed);
-    renderCart();
-    localStorage.removeItem('cj_cart_preload');
-  } catch(e) {}
-}
+// ── PRE-LOAD CART FROM MENU PAGE ──
+document.addEventListener('DOMContentLoaded', () => {
+  const raw = localStorage.getItem('cj_cart_full');
+  if (raw) {
+    try {
+      const loaded = JSON.parse(raw);
+      if (Array.isArray(loaded) && loaded.length > 0) {
+        cart = loaded.map(e => ({ ...e, qty: e.qty || 1 }));
+        renderCart();
+      }
+    } catch(e) {}
+    localStorage.removeItem('cj_cart_full');
+  }
+});
 </script>
+
+<style>
+/* ── PICK MODAL ── */
+#pickModal {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,.52); backdrop-filter: blur(6px);
+  z-index: 9000; align-items: center; justify-content: center; padding: 20px;
+}
+#pickModal.open { display: flex; }
+.pick-modal-box {
+  background: var(--card, #fff); border-radius: 20px; padding: 28px;
+  max-width: 400px; width: 100%; box-shadow: 0 24px 80px rgba(0,0,0,.25);
+  max-height: 88vh; overflow-y: auto;
+}
+.pick-modal-hdr { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:20px; gap:12px; }
+.pick-modal-hdr h3 { font-family:'Fraunces',serif; font-size:1.15rem; font-weight:800; color:var(--ink,#1a1a1a); margin:0; }
+.pick-modal-close { background:none; border:none; font-size:1.3rem; cursor:pointer; color:var(--ink3,#888); }
+.pick-opt-group { margin-bottom:18px; }
+.pick-opt-lbl { font-size:.65rem; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--ink3,#888); margin-bottom:9px; display:block; }
+.pick-opt-row { display:flex; gap:7px; flex-wrap:wrap; }
+.pick-chip {
+  border: 2px solid rgba(109,181,42,.25); border-radius: 50px;
+  padding: 6px 14px; font-family:'DM Sans',sans-serif; font-size:.8rem; font-weight:600;
+  cursor:pointer; background:transparent; color:var(--ink2,#333); transition:all .18s;
+}
+.pick-chip:hover { border-color:var(--g1,#6db52a); background:rgba(109,181,42,.06); }
+.pick-chip.active { background:var(--g1,#6db52a); color:white; border-color:var(--g1,#6db52a); }
+.pick-confirm-btn {
+  width:100%; background:var(--g1,#6db52a); color:white; border:none;
+  border-radius:50px; padding:13px 20px; font-family:'DM Sans',sans-serif;
+  font-weight:800; font-size:.9rem; cursor:pointer; transition:all .25s; margin-top:8px;
+}
+.pick-confirm-btn:hover { background:var(--g2,#4e8f16); }
+</style>
+
+<!-- PICK MODAL HTML -->
+<div id="pickModal" onclick="if(event.target===this)closePick()">
+  <div class="pick-modal-box">
+    <div class="pick-modal-hdr">
+      <h3 id="pickModalTitle">Item</h3>
+      <button class="pick-modal-close" onclick="closePick()">✕</button>
+    </div>
+
+    <div class="pick-opt-group" id="pickSizeGroup">
+      <span class="pick-opt-lbl">🥤 Cup Size</span>
+      <div class="pick-opt-row">
+        <button class="pick-chip active" data-group="size" data-val="S" onclick="pickSelect(this,'size')">S · 370ml</button>
+        <button class="pick-chip" data-group="size" data-val="M" onclick="pickSelect(this,'size')">M · 500ml +৳30</button>
+        <button class="pick-chip" data-group="size" data-val="L" onclick="pickSelect(this,'size')">L · 700ml +৳60</button>
+      </div>
+    </div>
+
+    <div class="pick-opt-group" id="pickIceGroup">
+      <span class="pick-opt-lbl">🧊 Ice Level</span>
+      <div class="pick-opt-row">
+        <button class="pick-chip" data-group="ice" data-val="No Ice" onclick="pickSelect(this,'ice')">No Ice</button>
+        <button class="pick-chip" data-group="ice" data-val="Less Ice" onclick="pickSelect(this,'ice')">Less Ice</button>
+        <button class="pick-chip active" data-group="ice" data-val="Normal Ice" onclick="pickSelect(this,'ice')">Normal</button>
+        <button class="pick-chip" data-group="ice" data-val="Extra Ice" onclick="pickSelect(this,'ice')">Extra Ice</button>
+      </div>
+    </div>
+
+    <div class="pick-opt-group" id="pickSugarGroup">
+      <span class="pick-opt-lbl">🍬 Sweetness</span>
+      <div class="pick-opt-row">
+        <button class="pick-chip" data-group="sugar" data-val="0%" onclick="pickSelect(this,'sugar')">0%</button>
+        <button class="pick-chip" data-group="sugar" data-val="25%" onclick="pickSelect(this,'sugar')">25%</button>
+        <button class="pick-chip" data-group="sugar" data-val="50%" onclick="pickSelect(this,'sugar')">50%</button>
+        <button class="pick-chip active" data-group="sugar" data-val="75%" onclick="pickSelect(this,'sugar')">75%</button>
+        <button class="pick-chip" data-group="sugar" data-val="100%" onclick="pickSelect(this,'sugar')">100%</button>
+      </div>
+    </div>
+
+    <button class="pick-confirm-btn" id="pickConfirmBtn" onclick="confirmPick()">+ Add to Order</button>
+  </div>
+</div>
+
 </body>
 </html>
