@@ -186,7 +186,7 @@
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:01713913227">01713-913227</a></li>
-        <li><a href="mailto:hello@chajoybd.com">hello@chajoybd.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#224a474e4e4d62414a43484d5b40460c414d4f"><span class="__cf_email__" data-cfemail="5139343d3d3e113239303b3e2833357f323e3c">[email&#160;protected]</span></a></li>
       </ul>
     </div>
   </div>
@@ -196,7 +196,7 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
 <script>
 function loadReceipt() {
   const raw = localStorage.getItem('cj_last_order');
@@ -217,12 +217,19 @@ function loadReceipt() {
   document.getElementById('rTotal').textContent = '৳' + o.total;
   document.getElementById('rTrxId').textContent = o.trxId;
 
-  document.getElementById('rItems').innerHTML = o.items.map(item => `
+  document.getElementById('rItems').innerHTML = o.items.map(item => {
+    const prefs = [];
+    if (item.size) prefs.push(item.size + ' size');
+    if (item.ice && item.ice !== 'Normal Ice') prefs.push(item.ice);
+    if (item.sugar && item.sugar !== '75%') prefs.push(item.sugar + ' sweet');
+    const prefStr = prefs.length ? `<div style="font-size:.72rem;color:var(--ink3);margin-top:2px;">${prefs.join(' · ')}</div>` : '';
+    return `
     <div class="receipt-item-row">
-      <span class="receipt-item-name">${item.name}</span>
+      <span class="receipt-item-name">${item.name}${prefStr}</span>
       <span class="receipt-item-qty">×${item.qty}</span>
       <span class="receipt-item-price">৳${item.subtotal}</span>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 
   if (o.notes) {
     const notesEl = document.getElementById('rNotes');
@@ -244,13 +251,4 @@ function sendWhatsApp() {
 
 loadReceipt();
 
-// Auto-open WhatsApp after a short delay on first load
-window.addEventListener('DOMContentLoaded', () => {
-  const waUrl = localStorage.getItem('cj_wa_notify');
-  if (!waUrl) {
-    document.getElementById('notifyBar').style.display = 'none';
-  }
-});
-</script>
-</body>
-</html>
+// Auto-open WhatsApp after a short
